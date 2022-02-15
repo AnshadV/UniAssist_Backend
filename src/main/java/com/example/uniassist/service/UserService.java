@@ -4,9 +4,7 @@ import com.example.uniassist.model.User;
 
 import java.util.List;
 
-/**
- * @author regcrix
- */
+
 public interface UserService {
 
     List<User> findAll();
@@ -18,5 +16,6 @@ public interface UserService {
     User saveOrUpdateUser(User User);
 
     void deleteUserById(String userName);
+
 
 }
