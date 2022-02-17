@@ -49,5 +49,10 @@ public class UniversityServiceImpl implements UniversityService {
         return universityRepository.findUniversityByFacultiesContaining(faculty);
     }
 
+    @Override
+    public List<University> findUniversityByCourse_UniID(long uniID) {
+        return universityRepository.findUniversityByCourse_UniID(uniID);
+    }
+
 
 }

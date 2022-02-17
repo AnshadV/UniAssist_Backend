@@ -12,16 +12,19 @@ public class University {
     private String uniName;
     private String country;
     private List<String> faculties;
+    private Course course;
 
     public University() {
 
     }
 
-    public University(Long uniID, String uniName, String country, List<String> faculties){
+    public University(Long uniID, String uniName, String country,
+                      List<String> faculties, Course course){
         this.uniID = uniID;
         this.uniName = uniName;
         this.country = country;
         this.faculties = faculties;
+        this.course = course;
     }
 
     public void setUniId(Long uniID) {
@@ -54,5 +57,13 @@ public class University {
 
     public void setFaculties(List<String> faculties) {
         this.faculties = faculties;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }

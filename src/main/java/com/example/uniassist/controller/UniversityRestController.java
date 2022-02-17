@@ -2,6 +2,7 @@ package com.example.uniassist.controller;
 
 
 import com.example.uniassist.dto.UniversityDTO;
+import com.example.uniassist.model.Course;
 import com.example.uniassist.model.University;
 import com.example.uniassist.repository.UniversityRepository;
 import com.example.uniassist.service.UniversityService;
@@ -35,8 +36,8 @@ public class UniversityRestController {
     }
 
     @PostMapping(value = "/save")
-    public ResponseEntity<?> saveOrUpdateUniversity(@RequestBody UniversityDTO UniversityDTO) {
-        universityService.saveOrUpdateUniversity(ObjectMapperUtils.map(UniversityDTO, University.class));
+    public ResponseEntity<?> saveOrUpdateUniversity(@RequestBody University University) {
+        universityService.saveOrUpdateUniversity(University);
         return new ResponseEntity("University added successfully", HttpStatus.OK);
     }
 
@@ -44,6 +45,13 @@ public class UniversityRestController {
     public UniversityDTO getCoutryContains(@PathVariable("country")String country) {
         return ObjectMapperUtils.map(universityService.findByCountryContaining(country), UniversityDTO.class);
     }
+
+    @GetMapping("byUni/{uniID}")
+    public List<University> getCourseByUniId(@PathVariable("uniID") long uniID) {
+        return universityService.findUniversityByCourse_UniID(uniID);
+    }
+
+
 
 
 

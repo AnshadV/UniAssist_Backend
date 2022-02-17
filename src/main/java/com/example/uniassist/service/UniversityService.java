@@ -20,4 +20,6 @@ public interface UniversityService {
 
 
     List<University> findUniversityByFacultiesContaining(String faculty);
+
+    List<University> findUniversityByCourse_UniID(long uniID);
 }
